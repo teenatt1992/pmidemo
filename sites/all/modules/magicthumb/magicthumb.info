@@ -1,0 +1,6 @@
+; $Id$
+name = Magic Thumb
+description = Magic Thumb<sup>&#8482;</sup> lets you enlarge your small images to the full screen upon click. You can even use it as an image slideshow! Try out some customisation options http://www.magictoolbox.com/magicthumb_integration/. By http://www.magictoolbox.com/. <br /> NOTE: This module requires one of those modules: Image, ImageField, ImageCache, or UberCart e-commerce suite.
+core = 7.x
+package = Image
+version = 2.17.0

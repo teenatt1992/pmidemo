@@ -1,0 +1,159 @@
+/*****************************************************************************************
+ *****                              DROP DOWN NAVIGATION                             *****
+ *****************************************************************************************/
+.menu-toggle {
+    display: none !important; }
+/*.selectnav {
+    display: none;
+}*/
+.navigation {
+    background: transparent;
+    display: block !important;
+    margin: 35px 0 0 0;
+    padding-bottom: 0;
+    float:right;
+}
+div.region-menu #menu-navigation {
+    background: transparent;
+    display: block;
+    width:auto;
+    left: inherit;
+    position:relative;
+    z-index:inherit;
+    opacity:1;
+    text-align: left;
+        font-size: 0;
+}
+div.region-menu #menu-navigation li a.active {
+    background:#034462;
+    border:1px solid #ffffff;
+}
+div.region-menu #menu-navigation, div.region-menu #menu-navigation li, div.region-menu #menu-navigation ul, div.region-menu #menu-navigation a {
+    padding: 0px;
+    margin: 0px;
+    list-style:none;
+}
+div.region-menu #menu-navigation li {
+    font-size: 14px;
+    display: inline-block;
+    list-style:none;
+    list-style-image:none;
+    width:auto;
+}
+div.region-menu #menu-navigation li:first-child a {
+    margin-left:0;
+    margin-right:5px;
+}
+div.region-menu #menu-navigation li.active-trail {
+    text-decoration: none;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.3);
+}
+div.region-menu #menu-navigation li.active-trail a {
+    font-weight: normal;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.3);
+    border:1px solid #ffffff;
+}
+div.region-menu #menu-navigation li a {
+    display: block;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #555555;
+    letter-spacing: -0.75px;
+    color: white;
+    border: 1px solid #226889;
+    font-family: Ubuntu, sans-serif;
+    height: 24px;
+    font-size: 1.35714em;
+    line-height: 1.26316em;
+    padding: 5px 10px 5px 10px;
+    margin-left:5px;
+    margin-right:5px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    behavior: url(/sites/all/themes/mysubthemename/PIE.htc);
+}
+div.region-menu #menu-navigation li a:hover {
+    background:none;
+    text-decoration: none;
+    color: #C0D3DC;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.3);
+}
+div.region-menu #menu-navigation li a:hover a {
+    color: #713f1d;
+    font-weight: normal;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.3);
+}
+div.region-menu #menu-navigation li ul {
+    display: none;
+    margin: 0px;
+    background: lightCyan;
+    padding: 10px 20px 10px 10px;
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
+    behavior: url(/sites/all/themes/mysubthemename/PIE.htc);
+}
+div.region-menu #menu-navigation li ul li {
+    padding: 10px 0px 0;
+    margin: 0px;
+    background: none;
+    height: 25px;
+    text-align: left;
+    display: block;
+    float: none !important;
+    margin-left: 10px;
+}
+div.region-menu #menu-navigation li ul li:hover {
+    background: none;
+}
+div.region-menu #menu-navigation li ul li:first-child {
+    padding-left: 0px;
+}
+div.region-menu #menu-navigation li ul li:first-child a {
+    border-left: none;
+}
+div.region-menu #menu-navigation li ul li:last-child {
+    border: none;
+    text-align: left;
+}
+div.region-menu #menu-navigation li ul li a {
+    padding: 0px;
+    margin: 0px;
+    background: none !important;
+    font-size: 14px;
+    color: #713f1d;
+    background: none;
+    border: none;
+    text-shadow: none;
+    height: auto;
+    width: auto;
+    text-shadow: none;
+}
+div.region-menu #menu-navigation li ul li a:hover {
+    color: #015a94;
+    background: none;
+}
+div.region-menu #menu-navigation ul {
+    position: absolute;
+    z-index: 10000;
+}
+div.region-menu #menu-navigation li:last-child a {
+    margin-right:0;
+}
+div.region-menu #menu-navigation li ul li:last-child {
+    padding-right: 0px;
+}
+div.region-menu #menu-navigation li ul li:last-child a {
+    border-right: none;
+}
+div.region-menu #menu-navigation li.expanded a {
+    margin-bottom:15px;
+}
+- See more at: http://webmar.com.au/blog/how-create-responsive-mobile-menu-omega-subtheme#sthash.PAEbVajN.dpuf

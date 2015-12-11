@@ -1,0 +1,51 @@
+<?php
+
+magicthumb_fix_css();
+
+function magicthumb_fix_css() {
+
+    //fix url's in css files
+    $path = dirname(__FILE__);
+    $list = glob($path.'/*');
+    $files = array();
+    if(is_array($list)) {
+        for($i = 0; $i < count($list); $i++) {
+            if(is_dir($list[$i])) {
+                if(!in_array(basename($list[$i]), array('.svn', '.git'))) {
+                    $add = glob($list[$i].'/*');
+                    if(is_array($add)) {
+                        $list = array_merge($list, $add);
+                    }
+                }
+            } else if(preg_match('#\.css$#i', $list[$i])) {
+                $files[] = $list[$i];
+            }
+        }
+    }
+
+    foreach($files as $file) {
+		if(!is_writable($file)) {
+			drupal_set_message(t('This installer need to modify some module files. Please check write access for "'.$file.'" file of your module.'), 'error');
+			continue;
+		}
+        $cssPath = dirname($file);
+        $cssRelPath = str_replace($path, '', $cssPath);
+		$toolPath = base_path().drupal_get_path('module', 'magicthumb').$cssRelPath;
+        $pattern = '#url\(\s*(\'|")?(?!data:|mhtml:|http(?:s)?:|/)([^\)\s\'"]+?)(?(1)\1)\s*\)#is';
+        $replace = 'url($1'.$toolPath.'/$2$1)';
+        $fileContents = file_get_contents($file);
+        $fixedFileContents = preg_replace($pattern, $replace, $fileContents);
+        //preg_match_all($pattern, $fileContents, $matches, PREG_SET_ORDER);
+        //debug_log($matches);
+        if($fixedFileContents != $fileContents) {
+            $fp = fopen($file, 'w+');
+            if($fp) {
+                fwrite($fp, $fixedFileContents);
+                fclose($fp);
+            }
+        }
+    }
+
+}
+
+?>
